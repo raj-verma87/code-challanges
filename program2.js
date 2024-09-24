@@ -16,6 +16,14 @@ const SecondLargestWord = (str)=>{
 }
 console.log("Second Largest Word...",SecondLargestWord("I am a best best developer"));
 
+const SecondLargestWordWithoutDuplicate = (str)=>{
+    let SecondLargestWordword =  str.split(" ")
+    .sort((a,b)=>b.length-a.length)[1]
+
+  return SecondLargestWordword;
+}
+console.log("Second Largest Word...",SecondLargestWordWithoutDuplicate("hello i am backend developer"));
+
 //========================================================
 
 // Map each digit to corresponding letters like on a phone keypad
