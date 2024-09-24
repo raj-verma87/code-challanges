@@ -69,7 +69,7 @@ const phoneMap = {
   const input2 = "3";
   const input3 = "233";
   
-  console.log(generateCombinations(input1));  // Output: ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
+  //console.log(generateCombinations(input1));  // Output: ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
   console.log(generateCombinations(input2));  // Output: ['d', 'e', 'f']
   //console.log(generateCombinations(input3));  // Output: ['add', 'ade', 'adf', 'aed', 'aee', 'aef', 'afd', 'afe', 'aff', ...]
   
