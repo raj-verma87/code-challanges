@@ -38,6 +38,7 @@ const phoneMap = {
     '9': 'wxyz'
   };
   
+  // 1st approach
   function generateCombinations(digits) {
     // Edge case: if no input is given, return an empty array
     if (!digits) return [];
@@ -72,4 +73,25 @@ const phoneMap = {
   //console.log(generateCombinations(input1));  // Output: ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
   console.log(generateCombinations(input2));  // Output: ['d', 'e', 'f']
   //console.log(generateCombinations(input3));  // Output: ['add', 'ade', 'adf', 'aed', 'aee', 'aef', 'afd', 'afe', 'aff', ...]
-  
+
+// 2nd approach using recursion
+var letterCombinations = function(digits){
+
+  if(digits.length === 0 || digits.includes("0") || digits.includes("1")) return [];
+
+  let phone_map = ["abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"];
+  let output = [];
+  backtrack("",digits,phone_map,output);
+  return output;
+}
+function backtrack(combination,next_digit,phone_map,output){
+  if(next_digit.length === 0)
+    output.push(combination);
+  else{
+    let letters = phone_map[next_digit[0]-'2'];
+    for(const letter of letters){
+      backtrack(combination+letter,next_digit.slice(1),phone_map,output);
+    }
+  }
+}
+console.log("combinations...",letterCombinations("23"));
